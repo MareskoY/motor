@@ -104,7 +104,8 @@ public class AdvertActivity extends AppCompatActivity {
             phoneTextView,
             descriptionTextView,
             dateTimeTextView,
-            yearTextView;
+            yearTextView,
+            categoryTextView;
     public ImageButton copyPhoneButton;
     public LinearLayout yearLayout;
     private Menu menu;
@@ -166,6 +167,7 @@ public class AdvertActivity extends AppCompatActivity {
                         reopenBlock = findViewById(R.id.advert_owner_reopen_block);
                         yearLayout = findViewById(R.id.advert_year_layout);
                         yearTextView = findViewById(R.id.advert_year_textView);
+                        categoryTextView = findViewById(R.id.advert_category_textView);
 
                         DocumentSnapshot document = task.getResult();
 
@@ -425,6 +427,7 @@ public class AdvertActivity extends AppCompatActivity {
         sellerTextView.setText(advert.getCreatorName());
         phoneTextView.setText(advert.getPhone());
         descriptionTextView.setText(advert.getDescription());
+        categoryTextView.setText(advert.getCategory());
         if(advert.getYear() == 0){
             yearLayout.setVisibility(View.GONE);
         }else{
