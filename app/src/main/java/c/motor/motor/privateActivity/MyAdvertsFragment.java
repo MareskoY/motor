@@ -183,7 +183,9 @@ public class MyAdvertsFragment extends Fragment {
                             }
                         }
                         adapter.notifyDataSetChanged();
-                        lastVisible = task.getResult().getDocuments().get(task.getResult().size() - 1);
+                        if(task.getResult().size() != 0) {
+                            lastVisible = task.getResult().getDocuments().get(task.getResult().size() - 1);
+                        }
                         upLoadProgressBar.setVisibility(View.GONE);
                         if(task.getResult().size() < LOAD_COUNT){
                             isLastItemReached = true;

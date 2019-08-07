@@ -162,7 +162,7 @@ public class FavoriteRecycleViewAdapter extends RecyclerView.Adapter<FavoriteRec
             }
         }else {
             Glide.with(mContext)
-                    .load(R.mipmap.empty_image)
+                    .load(Helpers.emptyCatImg(advert.getCategory().toLowerCase()))
                     .error(R.mipmap.empty_image)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     //.apply(requestOptions)
