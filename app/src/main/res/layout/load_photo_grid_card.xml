@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="0dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/load_photo_grid_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/load_photo_grid_card_img"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/colorLightGray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/load_photo_grid_card_delete"
+                style="@style/Widget.AppCompat.ActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/circle_shape"
+                android:src="@drawable/ic_close_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ProgressBar
+                android:id="@+id/load_photo_grid_card_progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/load_photo_grid_card_img"
+                app:layout_constraintEnd_toEndOf="@+id/load_photo_grid_card_img"
+                app:layout_constraintStart_toStartOf="@+id/load_photo_grid_card_img"
+                app:layout_constraintTop_toTopOf="@+id/load_photo_grid_card_img" />
+
+            <ImageButton
+                android:id="@+id/load_photo_grid_card_repeat"
+                android:src="@drawable/ic_replay_blue"
+                style="@style/Widget.AppCompat.ActionButton"
+                android:visibility="gone"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/load_photo_grid_card_img"
+                app:layout_constraintEnd_toEndOf="@+id/load_photo_grid_card_img"
+                app:layout_constraintStart_toStartOf="@+id/load_photo_grid_card_img"
+                app:layout_constraintTop_toTopOf="@+id/load_photo_grid_card_img"/>
+            
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

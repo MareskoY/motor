@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_menu_search"
+            android:title="Search" />
+        <item
+            android:id="@+id/nav_saved_advert"
+            android:icon="@drawable/ic_menu_favorite"
+            android:title="Saved advert" />
+        <item
+            android:id="@+id/nav_my_adverts"
+            android:icon="@drawable/ic_menu_my_advert"
+            android:title="My adverts" />
+    </group>
+
+    <item android:title="Create">
+        <menu>
+            <item
+                android:id="@+id/nav_add_advert"
+                android:icon="@drawable/ic_menu_add_circle"
+                android:title="Add advert" />
+        </menu>
+    </item>
+
+    <item android:title="Profile">
+        <menu>
+            <item
+                android:id="@+id/nav_user_settings"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Setting" />
+        </menu>
+    </item>
+
+</menu>

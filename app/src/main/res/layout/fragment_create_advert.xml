@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CreateAdvertFragment"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradien_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/add_advert_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:padding="16dp"
+                android:src="@drawable/ic_close_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/add_advert_go_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:padding="16dp"
+                android:src="@drawable/ic_undo_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:id="@+id/add_advert_scrollview"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/add_advert_category_layout"
+                android:orientation="vertical"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/add_advert_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="12dp"
+                    android:text="Category View"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:background="@drawable/text_view_shape"
+                    android:drawableRight="@drawable/ic_edit_blue"
+                    android:drawablePadding="5dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/add_advert_text_location_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="12dp"
+                    android:text="Your Country*"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:background="@drawable/text_view_shape"
+                    android:drawableRight="@drawable/ic_edit_location_blue"
+                    android:drawablePadding="5dp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/add_advert_text_location_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="10dp"
+                    android:text="Your City*"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:background="@drawable/text_view_shape"
+                    android:drawableRight="@drawable/ic_edit_location_blue"
+                    android:drawablePadding="5dp"
+                    android:visibility="gone">
+
+                </TextView>
+
+
+                <!-- Tittle Label -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp">
+                    <EditText android:id="@+id/add_advert_tittle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:textSize="13dp"
+                        android:hint="Titlte*" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayout2"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+                        <EditText
+                            android:id="@+id/add_advert_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Price*"
+                            android:textSize="13dp"
+                            android:maxLength="30"
+                            android:inputType="numberDecimal"></EditText>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/add_advert_currency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:entries="@array/currency"
+                        android:paddingTop="30px"
+                        android:paddingBottom="10px"
+                        android:text=""
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textInputLayout2"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp">
+                    <EditText android:id="@+id/add_advert_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:textSize="13dp"
+                        android:maxLength="15"
+                        android:hint="Phone*" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp">
+
+                    <EditText
+                        android:id="@+id/add_advert_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top|left"
+                        android:hint="Description*"
+                        android:inputType="textMultiLine"
+                        android:textSize="13dp"
+                        android:lines="8"
+                        android:maxLines="10"
+                        android:minLines="6"
+                        android:scrollbars="vertical" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <LinearLayout
+                        android:id="@+id/add_advert_add_photos_first_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:background="@drawable/text_view_shape"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:padding="15dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_add_a_photo_blue"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:textSize="20dp"
+                            android:paddingLeft="20dp"
+                            android:text="Add Photo"/>
+
+                    </LinearLayout>
+                </FrameLayout>
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/add_advert_add_photo_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/add_advert_add_delete_photo"
+                        android:visibility="gone"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="6dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/ic_clear_white"
+                        android:elevation="10dp"
+                        android:background="@drawable/circle_shape"/>
+
+                    <ImageView
+                        android:id="@+id/add_advert_add_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_directions_car_black_24dp"/>
+
+                    <ProgressBar
+                        android:id="@+id/add_advert_add_delete_photo_progressBar"
+                        android:visibility="gone"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/add_advert_add_photo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/add_advert_add_photo"
+                        app:layout_constraintTop_toTopOf="@+id/add_advert_add_photo" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/add_advert_add_additional_photo_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/add_advert_add_additional_photo1"
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:src="@drawable/ic_add_a_photo_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/add_advert_delete_additional_photo1"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/ic_clear_white"
+                        android:background="@drawable/circle_shape"
+                        app:layout_constraintEnd_toEndOf="@+id/add_advert_add_additional_photo1"
+                        app:layout_constraintTop_toTopOf="@+id/add_advert_add_additional_photo1" />
+
+                    <ProgressBar
+                        android:id="@+id/add_advert_additional_progressBar1"
+                        android:visibility="gone"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/add_advert_add_additional_photo1"
+                        app:layout_constraintEnd_toEndOf="@+id/add_advert_add_additional_photo1"
+                        app:layout_constraintStart_toStartOf="@+id/add_advert_add_additional_photo1"
+                        app:layout_constraintTop_toTopOf="@+id/add_advert_add_additional_photo1" />
+
+                    <ImageView
+                        android:id="@+id/add_advert_add_additional_photo2"
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:src="@drawable/ic_add_a_photo_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/add_advert_add_additional_photo3"
+                        app:layout_constraintStart_toEndOf="@+id/add_advert_add_additional_photo1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/add_advert_delete_additional_photo2"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/ic_clear_white"
+                        android:background="@drawable/circle_shape"
+                        app:layout_constraintEnd_toEndOf="@+id/add_advert_add_additional_photo2"
+                        app:layout_constraintTop_toTopOf="@+id/add_advert_add_additional_photo2" />
+
+                    <ProgressBar
+                        android:id="@+id/add_advert_additional_progressBar2"
+                        android:visibility="gone"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/add_advert_add_additional_photo2"
+                        app:layout_constraintEnd_toEndOf="@+id/add_advert_add_additional_photo2"
+                        app:layout_constraintStart_toStartOf="@+id/add_advert_add_additional_photo2"
+                        app:layout_constraintTop_toTopOf="@+id/add_advert_add_additional_photo2" />
+
+                    <ImageView
+                        android:id="@+id/add_advert_add_additional_photo3"
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:src="@drawable/ic_add_a_photo_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/add_advert_delete_additional_photo3"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/ic_clear_white"
+                        android:background="@drawable/circle_shape"
+                        app:layout_constraintEnd_toEndOf="@+id/add_advert_add_additional_photo3"
+                        app:layout_constraintTop_toTopOf="@+id/add_advert_add_additional_photo3" />
+
+                    <ProgressBar
+                        android:id="@+id/add_advert_additional_progressBar3"
+                        android:visibility="gone"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/add_advert_add_additional_photo3"
+                        app:layout_constraintEnd_toEndOf="@+id/add_advert_add_additional_photo3"
+                        app:layout_constraintStart_toStartOf="@+id/add_advert_add_additional_photo3"
+                        app:layout_constraintTop_toTopOf="@+id/add_advert_add_additional_photo3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/add_advert_create_advert"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:padding="12dp"
+                    android:background="@drawable/button_shape_full"
+                    android:text="Create advert"
+                    android:textColor="#ffffff"/>
+
+            </LinearLayout>
+
+
+
+
+        </ScrollView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

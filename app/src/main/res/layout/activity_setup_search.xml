@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetupSearchActivity"
+    android:background="@color/backgroundGray"
+    android:focusable="true" android:focusableInTouchMode="true">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/setup_search_floatingSearchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="@dimen/fab_margin"
+        android:clickable="true"
+        android:src="@drawable/ic_menu_search"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradien_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/setup_search_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CLEAR"
+                    android:paddingTop="2dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"/>
+
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingLeft="5dp"
+                    android:src="@drawable/ic_delete_blue" />
+
+            </LinearLayout>
+
+
+
+            <ImageButton
+                android:id="@+id/setup_search_go_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:padding="16dp"
+                android:src="@drawable/ic_undo_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:id="@+id/setup_search_scrollview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/setup_search_category_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="8dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/setup_search_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_view_shape"
+                    android:drawableRight="@drawable/ic_edit_blue"
+                    android:drawablePadding="5dp"
+                    android:padding="12dp"
+                    android:text="All categories"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="8dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Region"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/setup_search_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="12dp"
+                    android:text="Country"
+                    android:textSize="16sp"
+                    android:background="@drawable/text_view_shape"
+                    android:drawableRight="@drawable/ic_edit_location_blue"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/colorGray">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/setup_search_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="10dp"
+                    android:text="City"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"
+                    android:background="@drawable/text_view_shape"
+                    android:drawableRight="@drawable/ic_edit_location_blue"
+                    android:drawablePadding="5dp"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="8dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/setup_search_price_from"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_view_shape"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="10dp"
+                    android:inputType="numberDecimal"
+                    android:maxLength="12"
+                    android:hint="Price from"/>
+
+                <EditText
+                    android:id="@+id/setup_search_price_till"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_view_shape"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="10dp"
+                    android:inputType="numberDecimal"
+                    android:maxLength="12"
+                    android:hint="Price till"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/setup_search_year_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="8dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Year of manufacture"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="5dp"/>
+
+                <com.yahoo.mobile.client.android.util.rangeseekbar.RangeSeekBar
+                    android:id="@+id/setup_search_year_range"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    app:absoluteMinValue="1960"
+                    app:absoluteMaxValue="2030"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="8dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <CheckBox android:id="@+id/setup_search_checkbox_picture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Only with pictures"
+                    android:textSize="16sp"
+                    android:shadowColor="@color/colorPrimaryDark"
+                    android:textColorLink="@color/colorPrimaryDark"
+                    android:textColor="@color/colorGray"/>
+
+                <CheckBox android:id="@+id/setup_search_checkbox_new_products"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Only new products"
+                    android:textSize="16sp"
+                    android:shadowColor="@color/colorPrimaryDark"
+                    android:textColorLink="@color/colorPrimaryDark"
+                    android:textColor="@color/colorGray"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="8dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sorting"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorGray"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="5dp"/>
+
+                <RadioGroup
+                    android:id="@+id/setup_search_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/setup_search_radiobutton_sorting_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="By the date"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorGray"/>
+
+                    <RadioButton
+                        android:id="@+id/setup_search_radiobutton_sorting_high_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="From high price"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorGray"
+                        android:layout_marginTop="5dp"/>
+
+                    <RadioButton
+                        android:id="@+id/setup_search_radiobutton_sorting_less_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="From low price"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorGray"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

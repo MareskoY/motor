@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="languageNameEng">
+        <item>English</item>
+        <item>Vietnamese</item>
+    </string-array>
+
+    <string-array name="countryNameEng">
+        <item>Vietnam</item>
+        <item>Philippines</item>
+    </string-array>
+
+    <string-array name="cities_vietnam_native">
+        <item>Hồ Chí Minh City</item>
+        <item>Hà Nội</item>
+        <item>Hải Phòng</item>
+        <item>Đà Nẵng</item>
+        <item>Cần Thơ</item>
+    </string-array>
+
+    <string-array name="categories_eng">
+        <item>All categories</item>
+        <item>Bike</item>
+        <item>Car</item>
+        <item>Motorcycle</item>
+        <item>Truck</item>
+        <item>Cycle</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="cities_vietnam_eng">
+        <item>Ho Chi Minh City</item>
+        <item>Hanoi</item>
+        <item>Haiphong</item>
+        <item>Da Nang</item>
+        <item>Can Tho</item>
+    </string-array>
+
+    <string-array name="cities_philippines">
+        <item>Manila</item>
+        <item>Quezon City</item>
+        <item>Davao City</item>
+        <item>Caloocan</item>
+        <item>Cebu City</item>
+        <item>Zamboanga City</item>
+        <item>Taguig</item>
+        <item>Antipolo</item>
+        <item>Pasig</item>
+        <item>Cagayan de Oro</item>
+        <item>Parañaque</item>
+        <item>Dasmariñas</item>
+        <item>Valenzuela</item>
+        <item>Bacoor</item>
+        <item>General Santos</item>
+        <item>Las Piñas</item>
+        <item>Makati</item>
+        <item>San Jose del Monte</item>
+        <item>Bacolod</item>
+        <item>Muntinlupa</item>
+        <item>Calamba</item>
+        <item>Marikina</item>
+        <item>Iloilo City</item>
+        <item>Pasay</item>
+    </string-array>
+
+</resources>
