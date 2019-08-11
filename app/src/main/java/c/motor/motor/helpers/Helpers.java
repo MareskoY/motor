@@ -11,7 +11,7 @@ import java.util.Random;
 import c.motor.motor.R;
 
 public class Helpers {
-    public static String getUserCountry(Context context) {
+    public static String getUserCountry(Context context, String defaultCountry) {
         String country;
         try {
             final TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
@@ -22,7 +22,7 @@ public class Helpers {
                 }else if (simCountry.toLowerCase(Locale.US).equals("ph")){
                     country = "Philippines";
                 }else{
-                    country = null;
+                    country = defaultCountry;
                 }
 
                 return country;
@@ -35,7 +35,7 @@ public class Helpers {
                     }else if (simCountry.toLowerCase(Locale.US).equals("ph")){
                         country = "Philippines";
                     }else{
-                        country = null;
+                        country = defaultCountry;
                     }
 
                     return country;
@@ -43,7 +43,7 @@ public class Helpers {
             }
         }
         catch (Exception e) { }
-        return null;
+        return defaultCountry;
     }
     public static ArrayList<String> initArray(String[] values){
         ArrayList<String> list = new ArrayList<>();

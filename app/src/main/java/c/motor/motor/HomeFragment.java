@@ -100,7 +100,7 @@ public class HomeFragment extends Fragment {
         loadProgressBar = view.findViewById(R.id.main_home_load_progressBar);
         upLoadProgressBar = view.findViewById(R.id.main_home_upLoad_progressBar);
 
-        countryQuery = Helpers.getUserCountry(getContext());
+        countryQuery = Helpers.getUserCountry(getContext(), "Vietnam");
 
         if(tittleQuery == null) {
             setUpAdvertsRecycleView();
@@ -352,63 +352,5 @@ public class HomeFragment extends Fragment {
             }
         });
 
-
-
-
-
-
-//        uploadCount = 0;
-//        System.out.println("uploadCount" + ":" + uploadCount +"______" + "count" + ":" + count);
-//        System.out.println("upload +++++++++++");
-//        upLoadProgressBar.setVisibility(View.VISIBLE);
-//
-////        Task<QuerySnapshot> task = query.get();
-////        task.addOnCompleteListener();
-////
-////        QuerySnapshot queryDocumentSnapshots = Tasks.await(task);
-////        queryDocumentSnapshots
-//        for(int i = count; i < list.size() && uploadCount < LOAD_COUNT; i++) {
-//
-//
-//            System.out.println("uploadCount" + ":" + uploadCount +"______" + "count" + ":" + count);
-//            System.out.println("______" + "i" + ":" + i);
-//            query = ref.whereEqualTo("tittle",list.get(i));
-//            query
-//                    .orderBy("dateTime", Query.Direction.DESCENDING)
-//                    .startAfter(lastVisible)
-//                    .get()
-//                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                            for(DocumentSnapshot queryDocumentSnapshots: task.getResult()){
-//                                AdvertPreview advertPreview = AdvertPreview.documentSnapshotToAdvertPreview(queryDocumentSnapshots);
-//                                if (advertPreview != null) {
-//                                    System.out.println("______" + "count++++++++" + ":" + count);
-//                                    advertPreviewArrayList.add(advertPreview);
-//                                }
-//                                adapter = new AdvertPreviewRecycleViewAdapter(getContext(), advertPreviewArrayList);
-//                                //waitingTask = task;
-//                                if (uploadCount == LOAD_COUNT) {
-//                                    recyclerViewMergeAdapter.clearAdapters();
-//                                    recyclerViewMergeAdapter.addAdapter(adapter);
-//                                    recyclerView.setAdapter(recyclerViewMergeAdapter);
-//                                    loadProgressBar.setVisibility(View.GONE);
-//                                    System.out.println("finished");
-//                                    lastVisible = task.getResult().getDocuments().get(task.getResult().size()-1);
-//                                } else {
-//                                    recyclerViewMergeAdapter.addAdapter(adapter);
-//                                }
-//                                if(uploadCount < LOAD_COUNT){
-//                                    isLastItemReached = true;
-//                                }
-//                                uploadCount++;
-//                                count++;
-//                            }
-//
-//                        }
-//                    });
-//
-//            //////
-//        }
     }
 }

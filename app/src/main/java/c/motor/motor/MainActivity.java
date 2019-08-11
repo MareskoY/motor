@@ -48,6 +48,7 @@ import java.util.Locale;
 
 import c.motor.motor.addAdvertActivity.AddAdvertActivity;
 import c.motor.motor.helpers.Helpers;
+import c.motor.motor.helpers.SharedPreferenceUtils;
 import c.motor.motor.model.User;
 import c.motor.motor.privateActivity.PrivateMainActivity;
 import in.galaxyofandroid.spinerdialog.OnSpinerItemClick;
@@ -119,15 +120,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        firstPreferenceCountry();
-        firstPreferenceLanguage();
-        SharedPreferences currentPreferenceCountry = getApplicationContext().getSharedPreferences(String.valueOf(R.string.preference), 0);
-        currentCountry = currentPreferenceCountry.getString("country", null);
-        currentCity = currentPreferenceCountry.getString("city", null);
-        //currentCountry = AppData.getPreference(getApplicationContext(), "country");
-        currentLanguage = currentPreferenceCountry.getString("language", null);
 
-        System.out.println("currentCountry" + currentCountry);
+        setUpCountryAndLanguage();
 
         mAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -243,6 +237,18 @@ public class MainActivity extends AppCompatActivity
             ShowSettingsPopup(getCurrentFocus());
         }
 
+    }
+
+    public void setUpCountryAndLanguage() {
+        firstPreferenceCountry();
+        firstPreferenceLanguage();
+        SharedPreferenceUtils.Of utils = SharedPreferenceUtils.of(getApplicationContext());
+
+        currentCountry = utils.getItem("country", null);
+        currentCity = utils.getItem("city", null);
+        currentLanguage = utils.getItem("language", null);
+
+        System.out.println("currentCountry" + currentCountry);
     }
 
     @Override
@@ -599,55 +605,31 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void firstPreferenceCountry(){
-        //String newCountry = Helpers.getUserCountry(getApplicationContext());
-        SharedPreferences oldPreferenceCountry = getApplicationContext().getSharedPreferences(String.valueOf(R.string.preference), 0);
-        String oldCountry = oldPreferenceCountry.getString("country", null);
-        SharedPreferences settings = getApplicationContext().getSharedPreferences(String.valueOf(R.string.preference), 0);
+        Context context = getApplicationContext();
+        String savedCountry = SharedPreferenceUtils.of(context).getItem("country", null);
+        System.out.println("first setup +++ " + savedCountry);
 
-        System.out.println("first setup +++ " + oldCountry);
-        if(oldCountry == null){
-
-
-            isFirstSetup = true;
-
-            String newCountry = Helpers.getUserCountry(getApplicationContext());
-            if(newCountry != null){
-                if(newCountry.equals("Vietnam") || newCountry.equals("Philippines")) {
-                    SharedPreferences.Editor editor = settings.edit();
-                    editor.putString("country", newCountry);
-                    editor.apply();
-                }else{
-                    SharedPreferences.Editor editor = settings.edit();
-                    editor.putString("country", "Vietnam");
-                    editor.apply();
-                }
-            }else{
-                SharedPreferences.Editor editor = settings.edit();
-                editor.putString("country", "Vietnam");
-                editor.apply();
-            }
+        if (savedCountry != null) {
+            return;
         }
 
+        isFirstSetup = true;
+        String userCountry = Helpers.getUserCountry(context, "Vietnam");
+        SharedPreferenceUtils.of(context).setItem("country", userCountry);
     }
 
     private void firstPreferenceLanguage() {
-        //String newCountry = Helpers.getUserCountry(getApplicationContext());
-        String newLanguage;
-
-        SharedPreferences oldPreferenceLanguage = getApplicationContext().getSharedPreferences(String.valueOf(R.string.preference), 0);
-        String oldLanguage = oldPreferenceLanguage.getString("language", null);
-
-        SharedPreferences settings = getApplicationContext().getSharedPreferences(String.valueOf(R.string.preference), 0);
-        SharedPreferences.Editor editor = settings.edit();
-
-        if (oldLanguage == null) {
-            String systemLanguage = Locale.getDefault().getLanguage();
-            if (systemLanguage.equals("vn")) {
-                editor.putString("language", "Vietnamese");
-            } else {
-                editor.putString("language", "English");
-            }
-            editor.apply();
+        Context context = getApplicationContext();
+        SharedPreferenceUtils.Of utils =SharedPreferenceUtils.of(context);
+        String oldLanguage = utils.getItem("language", null);
+        if (oldLanguage != null) {
+            return;
+        }
+        String systemLanguage = Locale.getDefault().getLanguage();
+        if (systemLanguage.equals("vn")) {
+            utils.setItem("language", "Vietnamese");
+        } else {
+            utils.setItem("language", "English");
         }
     }
 
@@ -755,12 +737,16 @@ public class MainActivity extends AppCompatActivity
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences settings = getApplicationContext().getSharedPreferences(String.valueOf(R.string.preference), 0);
-                SharedPreferences.Editor editor = settings.edit();
-                editor.putString("country", countryInput.getText().toString());
-                editor.putString("city", cityInput.getText().toString());
-                editor.putString("language", languageInput.getText().toString());
-                editor.apply();
+
+                SharedPreferenceUtils.Of utils = SharedPreferenceUtils.of(getApplicationContext());
+
+                String country = countryInput.getText().toString();
+                String city = cityInput.getText().toString();
+                String language = languageInput.getText().toString();
+
+                utils.setItem("country", country);
+                utils.setItem("city", city);
+                utils.setItem("language", language);
 
 
                 Intent intent = new Intent(MainActivity.this , IntroActivity.class);
