@@ -31,7 +31,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.Menu;
@@ -41,12 +40,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import c.motor.motor.CreateAdvertActivity;
-import c.motor.motor.HomeFragment;
 import c.motor.motor.IntroActivity;
 import c.motor.motor.MainActivity;
 import c.motor.motor.R;
-import c.motor.motor.SearchFragment;
 import c.motor.motor.addAdvertActivity.AddAdvertActivity;
 import c.motor.motor.helpers.AppData;
 import c.motor.motor.model.User;

@@ -114,7 +114,6 @@ public class AddAdvertActivity extends AppCompatActivity {
             isUsedRadioBtn;
 
     private LinearLayout
-            addPhotosBtn,
             yearLayout;
 
     FrameLayout photoFrameLayout;
@@ -459,7 +458,6 @@ public class AddAdvertActivity extends AppCompatActivity {
         priceInput = findViewById(R.id.add_advert_price_input);
         descriptionInput = findViewById(R.id.add_advert_description_input);
         currencyTextView = findViewById(R.id.add_advert_currency_textView);
-        addPhotosBtn = findViewById(R.id.add_advert_add_photos_first_button);
         createButton = findViewById(R.id.add_advert_create_btn);
         reopenButton = findViewById(R.id.add_advert_reopen_btn);
         saveChangesButton = findViewById(R.id.add_advert_save_changes_btn);
